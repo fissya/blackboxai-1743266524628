@@ -16,7 +16,7 @@
         <div class="container mx-auto px-4 py-6">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <img src="https://placehold.co/200x100/red/white?text=FEFO+Logo" alt="FEFO Logo" class="h-16 mr-4">
+                    <img src="assets/icons/fefo-logo.png" alt="FEFO Logo" class="h-16 mr-4">
                     <h1 class="text-2xl font-brush">FEFO 9th</h1>
                 </div>
                 <nav>
@@ -33,7 +33,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/333/eee?text=Mount+Fuji+Background');">
+    <section id="home" class="relative h-screen flex items-center justify-center bg-fixed bg-cover bg-center" style="background-image: url('assets/images/backgrounds/bg-mount-fuji.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="relative z-10 text-center px-4">
             <h2 class="text-5xl md:text-7xl font-brush text-white mb-4">Japan's Rise</h2>
@@ -42,6 +42,10 @@
                 Register Now
             </button>
         </div>
+        <img 
+            src="assets/images/mascots/mascot-owl-removebg-preview.png" 
+            alt="FEFO Owl Mascot"
+            class="owl-mascot absolute bottom-8 right-8 w-32 h-32">
     </section>
 
     <!-- About Section -->
@@ -50,7 +54,7 @@
             <h2 class="text-3xl font-brush text-center mb-12">About FEFO</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <img src="https://placehold.co/600x400/eee/333?text=Japanese+Education" alt="Japanese Education" class="rounded-lg shadow-lg">
+                    <img src="assets/images/gallery/fefo.webp" alt="Japanese Education" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2">
                     <p class="text-lg mb-4">The FEFO Olympiad celebrates Japan's remarkable post-war revival through education, inspired by Emperor Hirohito's famous question: "How many teachers survived?"</p>
@@ -59,6 +63,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Brush-Stroke Divider -->
+    <img src="assets/images/decorations/brush-stroke-divider.webp" 
+         alt="Japanese brush-stroke divider" 
+         class="brush-stroke-divider">
 
     <!-- Competitions Section -->
     <section id="competitions" class="py-20 bg-wood-50">
@@ -140,29 +149,77 @@
             <h2 class="text-3xl font-brush text-center mb-12">Gallery</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+1" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+2" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+3" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+4" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+5" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+6" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+7" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/300x200/eee/333?text=Event+8" alt="Past Event" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
-                </div>
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/1.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/2.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/3.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/4.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/5.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/6.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/7.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
+                  <div class="gallery-item">
+                    <div class="skeleton-placeholder"></div>
+                    <img 
+                      class="gallery-image" 
+                      data-src="assets/images/gallery/8.webp" 
+                      alt="Gallery image"
+                      loading="lazy">
+                    <div class="gallery-spinner"></div>
+                  </div>
             </div>
         </div>
     </section>
@@ -214,11 +271,11 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <img src="https://placehold.co/200x80/red/white?text=FEFO+Logo" alt="FEFO Logo" class="h-12">
-                    <p class="mt-2 text-sm">© 2023 FEFO. All rights reserved.</p>
+                    <img src="assets/icons/fefo-logo.png" alt="FEFO Logo" class="h-12">
+                    <p class="mt-2 text-sm">© FEFO9th 2025.</p>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="https://instagram.com/fefo.official" class="text-white hover:text-gold-300 transition">
+                    <a href="https://www.instagram.com/officialfefo_/" class="text-white hover:text-gold-300 transition">
                         <i class="fab fa-instagram fa-lg"></i>
                     </a>
                     <a href="https://twitter.com/fefo_official" class="text-white hover:text-gold-300 transition">
