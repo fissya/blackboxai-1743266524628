@@ -18,7 +18,7 @@
 
 .cherry-blossom {
     position: absolute;
-    background-image: url('../images/cherry-blossom.png');
+    background-image: url('../assets/images/decorations/sakura.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 30px;
@@ -26,19 +26,33 @@
     animation: falling 8s linear infinite;
 }
 
-/* Owl Mascot Animation */
-@keyframes blink {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.1); }
-}
-
-.owl-mascot {
-    transition: all 0.3s ease;
-}
-
-.owl-mascot:hover {
-    animation: blink 0.5s;
-}
+/* Animasi Utama */
+@keyframes owl-float {
+    0%, 100% { 
+      transform: translateY(0) rotate(0deg);
+    }
+    50% { 
+      transform: translateY(-20px) rotate(-5deg);
+    }
+  }
+  
+  /* Efek Hover */
+  @keyframes owl-hover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(10deg); }
+    100% { transform: scale(1); }
+  }
+  
+  .owl-mascot {
+    animation: owl-float 3s ease-in-out infinite; /* Mengambang perlahan */
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .owl-mascot:hover {
+    animation: owl-hover 1s ease-in-out infinite; /* Rotasi & scale saat hover */
+    filter: drop-shadow(0 0 8px rgba(199, 44, 59, 0.5)); /* Bayangan merah */
+  }
 
 /* Section Fade-in Animation */
 @keyframes fadeIn {
@@ -59,3 +73,4 @@
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
