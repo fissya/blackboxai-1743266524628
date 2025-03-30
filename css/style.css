@@ -27,7 +27,53 @@ button {
 
 /* About section styles */
 #about {
-    background-color: white;
+    background-image: url('../assets/images/textures/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* White overlay with 90% opacity */
+    mix-blend-mode: multiply; /* Blend mode */
+    z-index: 1; /* Ensure overlay is above the background */
+}
+
+#about h2, #about p {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+/* Competitions Section Styles */
+#competitions {
+    position: relative; /* Ensure positioning context for the overlay */
+}
+
+#competitions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/pattern/seigaiha-wave.webp');
+    background-size: cover; /* Ukuran pattern lebih kecil */
+    opacity: 0.12;
+    background-repeat: repeat; /* Repeat pattern in both directions */
+    mix-blend-mode: overlay; /* Blend mode */
+    z-index: 0; /* Position behind the content */
+}
+
+#competitions > * {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 1; /* Position content above the overlay */
 }
 
 /* Typography styles */
@@ -41,3 +87,212 @@ h1, h2, h3 {
         font-size: 2.5rem;
     }
 }
+
+/* Brush-Stroke Divider Styles */
+.brush-stroke-divider {
+    margin: 3rem 0;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+}
+
+.brush-stroke-divider:hover {
+    opacity: 1;
+}
+
+/* Enhanced Lightbox Styles */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+}
+
+#lightbox.show .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Navigation Buttons */
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(199, 44, 59, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    background: #c72c3b;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(199, 44, 59, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: #c72c3b;
+    transform: scale(1.1);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #c72c3b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+/* Image Counter */
+.lightbox-counter {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 1001;
+}
+
+/* Focus styles for accessibility */
+.lightbox-nav:focus,
+.lightbox-close:focus {
+    outline: 2px solid #f8d56b;
+    outline-offset: 2px;
+}
+
+/* Gallery Loading System */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3; /* Maintain 4:3 ratio */
+  }
+  
+  .skeleton-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+  }
+  
+  .gallery-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease 200ms;
+  }
+  
+  .gallery-image.loaded {
+    opacity: 1;
+  }
+  
+  .gallery-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(199, 44, 59, 0.2);
+    border-top-color: #c72c3b;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .gallery-spinner.active {
+    opacity: 1;
+  }
+  
+  /* Animations */
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
